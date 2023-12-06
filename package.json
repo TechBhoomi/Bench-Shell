@@ -1,0 +1,30 @@
+{
+  "name": "bench-shell",
+  "version": "1.0.0",
+  "description": "Desktop applications",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --exec electron .",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechBhoomi/Bench-Shell.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechBhoomi/Bench-Shell/issues"
+  },
+  "homepage": "https://github.com/TechBhoomi/Bench-Shell#readme",
+  "devDependencies": {
+    "electron": "^27.1.2",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "node-machine-id": "^1.1.12"
+  }
+}
