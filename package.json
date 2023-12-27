@@ -1,30 +1,102 @@
 {
-  "name": "bench-shell",
-  "version": "1.0.0",
-  "description": "Desktop applications",
+  
+  "name": "tyss-shell-app",
+  
+  "version": "1.0.13",
+  
+  "description": "Bench-app",
+  
   "main": "main.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --exec electron .",
-    "start": "electron .",
-    "dist": "electron-builder"
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1",
+  
+    
+  "start": "electron .",
+  
+    
+  "dist": "electron-builder"
+  
   },
+  
+
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TechBhoomi/Bench-Shell.git"
+    "url": "https://github.com/TechBhoomi/Bench-Shell.git"
   },
+  
+  "publish": {
+  
+    
+  "provider": "github",
+  
+    
+  "releaseType": "release"
+  
+  },
+  
+  "build": {
+  
+    
+  "appId": "com.tysstestapp.autoupdater",
+  
+    
+  "productName": "tyss-shell-app",
+  
+    
+  "win": {
+  
+    
+    
+  "target": "nsis",
+  
+    
+    
+  "requestedExecutionLevel": "requireAdministrator"
+  
+    
+  },
+  
+    
+  "directories": {
+  
+    
+    
+  "output": "dist"
+  
+    
+  }
+  
+  },
+  
   "keywords": [],
-  "author": "",
+  
+  "author": "Lakshmeesh",
+  
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TechBhoomi/Bench-Shell/issues"
-  },
-  "homepage": "https://github.com/TechBhoomi/Bench-Shell#readme",
+  
   "devDependencies": {
-    "electron": "^27.1.2",
-    "electron-builder": "^24.9.1"
+  
+    
+  "electron": "^28.1.0",
+  
+    
+  "electron-builder": "^24.9.1"
+  
   },
+  
   "dependencies": {
-    "node-machine-id": "^1.1.12"
+  
+    
+  "electron-log": "^5.0.1",
+  
+    
+  "electron-updater": "^6.1.7",
+  
+    
+  "update-electron-app": "^3.0.0"
+  
   }
 }

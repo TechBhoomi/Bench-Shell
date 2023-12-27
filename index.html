@@ -1,79 +1,59 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Electron WebView Example</title>
-</head>
-<body>
-  <webview> hello <br>
-
-    <a href="http://192.168.1.202:3031/">qtalk</a>
-
-  </webview>
-<H1>HELLO LAKSHMEESH</H1>
-  <script src="renderer.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Test Yantra - shell</title>
-
-  <style>
-section {
-  width: 100%;
-  height: 1000px;
-  background: rgb(21, 123, 143);
-  text-align: center;
-  padding: 10px;
-}
-    h1 {
-      color: orange;
-    }
-    div {
-      width: 70%;
-      margin: auto;
-      display: flex;
-      padding: 2px;
-      align-items: center;
-     justify-content: space-between;
-    }
-
-    button {
-      padding: 2px;
-      border: none;
-      border-radius: 5px;
-      background-color: cornflowerblue;
-    }
-    a {
-      text-decoration: none;
-      font-size: 19px;
-color: chartreuse;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bench</title>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          flex-direction: column;
+          font-family: Arial, sans-serif;
+        }
+        h1 {
+          margin-bottom: 20px;
+        }
+        .retry-button {
+          padding: 10px 20px;
+          cursor: pointer;
+          background-color: #3498db;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          outline: none;
+        }
+      </style>
 </head>
 <body>
- <section>
-  <h1>Welcome to TYSS!</h1>
-  <webview id="myWebview"> 
-    
- <div>
-  <div>
-    <button ><a href="http://192.168.1.202:3031/">Q-Talk </a> </button>
-    <button ><a href="http://106.51.74.69:8000/"> Bench</a></button>
-    <button ><a href="http://192.168.1.252:4007/">Test-Freshers</a> </button>
-    <button ><a href="http://106.51.74.69:9084/">Incubation</a> </button>
-  
-  
-  </div>
-
- </div>
-
-
-  </webview>
- </section>
-
-
+    <h1>You're offline. Please check your internet connection.</h1>
+    <button class="retry-button">Retry</button>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const retryButton = document.querySelector('.retry-button');
+
+    retryButton.addEventListener('click', () => {
+      checkInternetConnection();
+    });
+    
+    checkInternetConnection(); // Check connection on page load
+
+    function checkInternetConnection() {
+      fetch('https://www.google.com', { mode: 'no-cors' })
+        .then(() => {
+          // Internet connection is available
+          window.location.href = 'http://106.51.74.69:8000/'; // Redirect to your main app page
+        })
+        .catch(() => {
+          // Internet connection is not available
+          // You can display a message or handle the UI here
+          console.log("You're still offline. Please check your internet connection.");
+        });
+    }
+  });
+</script>
 </html>
